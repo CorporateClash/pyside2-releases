@@ -1,9 +1,9 @@
 import { Octokit } from "@octokit/rest";
-const { GITHUB_TOKEN } = process.env;
+const { GH_TOKEN } = process.env;
 
 let octokit = new Octokit();
-if (GITHUB_TOKEN) {   
-    octokit = new Octokit({auth: GITHUB_TOKEN!});
+if (GH_TOKEN) {   
+    octokit = new Octokit({auth: GH_TOKEN!});
 }
 
 
