@@ -1,5 +1,11 @@
 import { Octokit } from "@octokit/rest";
+const { GITHUB_TOKEN } = process.env;
+
 const octokit = new Octokit();
+if (GITHUB_TOKEN) {   
+    const octokit = new Octokit({auth: GITHUB_TOKEN!});
+}
+
 
 (async () => {
     let release = await octokit.repos.getLatestRelease({ owner: "CorporateClash", repo: "pyside2-releases" });
@@ -14,7 +20,7 @@ const octokit = new Octokit();
         await octokit.repos.createOrUpdateFile({
             owner: "CorporateClash",
             repo: "pyside2-releases",
-            path: "latest.txt",
+            path: "/latest.txt",
             message: "Update latest release url", // commit message
             content: installer.browser_download_url
         })
