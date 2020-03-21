@@ -22,7 +22,7 @@ if (GITHUB_TOKEN) {
             repo: "pyside2-releases",
             path: "/latest.txt",
             message: "Update latest release url", // commit message
-            content: installer.browser_download_url
+            content: new Buffer(installer.browser_download_url).toString('base64')
         })
     }
     else {

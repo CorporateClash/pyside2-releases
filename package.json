@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "do": "tsc && node do.js",
+    "do": "tsc && node --unhandled-rejections=strict do.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
