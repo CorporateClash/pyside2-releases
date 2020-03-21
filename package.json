@@ -1,0 +1,27 @@
+{
+  "name": "pyside2-releases",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@octokit/rest": "^17.1.1",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "do": "tsc && node do.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CorporateClash/pyside2-releases.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CorporateClash/pyside2-releases/issues"
+  },
+  "homepage": "https://github.com/CorporateClash/pyside2-releases#readme"
+}

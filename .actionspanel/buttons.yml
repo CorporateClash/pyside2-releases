@@ -1,0 +1,4 @@
+buttons:
+    - title: update
+      action: "update"
+      description: Runs the update action
