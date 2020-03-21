@@ -1,10 +1,11 @@
 import { Octokit } from "@octokit/rest";
 const { GITHUB_TOKEN } = process.env;
 
-const octokit = new Octokit();
+let octokit = new Octokit();
 if (GITHUB_TOKEN) {   
-    const octokit = new Octokit({auth: GITHUB_TOKEN!});
+    octokit = new Octokit({auth: GITHUB_TOKEN!});
 }
+
 
 
 (async () => {
