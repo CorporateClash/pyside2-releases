@@ -21,7 +21,7 @@ if (GH_TOKEN) {
         await octokit.repos.createOrUpdateFile({
             owner: "CorporateClash",
             repo: "pyside2-releases",
-            path: "/latest.txt",
+            path: "latest.txt",
             message: "Update latest release url", // commit message
             content: new Buffer(installer.browser_download_url).toString('base64')
         })
