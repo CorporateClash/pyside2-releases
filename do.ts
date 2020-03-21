@@ -23,7 +23,7 @@ if (GH_TOKEN) {
             repo: "pyside2-releases",
             path: "latest.txt",
             message: "Update latest release url", // commit message
-            content: new Buffer(installer.browser_download_url).toString('base64')
+            content: Buffer.from(installer.browser_download_url).toString('base64')
         })
     }
     else {
