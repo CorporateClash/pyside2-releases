@@ -11,7 +11,7 @@ const octokit = new Octokit();
     let installer = _assets[0]
     console.log(installer.browser_download_url)
     if (process.env.GITHUB_ACTIONS) {
-        octokit.repos.createOrUpdateFile({
+        await octokit.repos.createOrUpdateFile({
             owner: "CorporateClash",
             repo: "pyside2-releases",
             path: "latest.txt",
