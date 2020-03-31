@@ -17,14 +17,32 @@ if (GH_TOKEN) {
     }
     let installer = _assets[0]
     console.log(installer.browser_download_url)
+    let existing = await octokit.repos.getContents({
+        owner: "CorporateClash",
+        repo: "pyside2-releases",
+        path: "latest.txt",
+    }).catch((err) => {console.log(err); console.log("Failed getting latest.txt, assuming nonexistant")})
     if (process.env.GITHUB_ACTIONS) {
-        await octokit.repos.createOrUpdateFile({
-            owner: "CorporateClash",
-            repo: "pyside2-releases",
-            path: "latest.txt",
-            message: "Update latest release url", // commit message
-            content: Buffer.from(installer.browser_download_url).toString('base64')
-        })
+        if (existing) {
+            await octokit.repos.createOrUpdateFile({
+                owner: "CorporateClash",
+                repo: "pyside2-releases",
+                path: "latest.txt",
+                // @ts-ignore
+                sha: existing.data.sha,
+                message: "Update latest release url",
+                content: Buffer.from(installer.browser_download_url).toString('base64')
+            })
+        }
+        else {
+            await octokit.repos.createOrUpdateFile({
+                owner: "CorporateClash",
+                repo: "pyside2-releases",
+                path: "latest.txt",
+                message: "Update latest release url",
+                content: Buffer.from(installer.browser_download_url).toString('base64')
+            })
+        }
     }
     else {
         console.log("Not running in GH actions, exiting")
