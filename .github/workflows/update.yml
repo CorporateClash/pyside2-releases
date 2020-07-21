@@ -1,8 +1,9 @@
 name: update
 on: 
-    repository_dispatch:
+    workflow_dispatch:
     release:
-    
+      types: [published]
+
 jobs:
     run:
         runs-on: ubuntu-latest
