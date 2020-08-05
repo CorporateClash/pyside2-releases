@@ -1,1 +1,1 @@
-https://github.com/CorporateClash/pyside2-releases/releases/download/v1.1.2/CorporateClash.dmg
+https://github.com/CorporateClash/pyside2-releases/releases/download/v1.1.3/CorporateClash.dmg
