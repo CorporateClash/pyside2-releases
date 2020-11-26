@@ -1,1 +1,1 @@
-https://github.com/CorporateClash/pyside2-releases/releases/download/v1.1.5/installer.exe
+https://github.com/CorporateClash/pyside2-releases/releases/download/v1.2.0/installer.exe
